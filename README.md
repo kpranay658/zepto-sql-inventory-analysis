@@ -1,7 +1,9 @@
 🛒 Zepto E-commerce SQL Inventory Analysis
+
 📌 Project Overview
 
 This project is a deep-dive SQL analysis of real-world e-commerce inventory data from Zepto, one of India’s leading quick-commerce startups. As an aspiring Data Analyst, I transitioned raw, messy CSV data into a structured PostgreSQL database to uncover business-critical insights regarding pricing strategies, stock availability, and revenue potential.
+
 🛠️ Technical Workflow
 
 To ensure a professional and scalable analysis, I followed a structured data engineering pipeline:
