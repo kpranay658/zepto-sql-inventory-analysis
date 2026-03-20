@@ -48,7 +48,7 @@ This project demonstrates my proficiency in advanced SQL techniques:
 
 📁 Repository Structure
 
-    Data/: Contains the zepto_v2.csv raw dataset (sourced from Kaggle).
+    Data/: Contains the zepto_v2.csv raw dataset (sourced from Kaggle-https://shorturl.at/mhe8A ).
 
     Scripts/:
 
@@ -64,6 +64,7 @@ This project demonstrates my proficiency in advanced SQL techniques:
 
 Pranay Kumar
 Data Annotation Specialist | Aspiring Data Analyst
+
 Transitioning from a Data Annotation Specialist background to full-time Data Analytics. I specialize in turning raw datasets into actionable business narratives.
 
 Check out my other projects:
