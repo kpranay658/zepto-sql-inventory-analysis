@@ -1,83 +1,263 @@
-🛒 Zepto E-commerce SQL Inventory Analysis
+Yes. A few well-placed emojis can make the README look more modern and visually appealing **without looking unprofessional**.
 
-📌 Project Overview
+For a Data Analytics portfolio project, I'd use emojis only in headings and key sections.
 
-This project is a deep-dive SQL analysis of real-world e-commerce inventory data from Zepto, one of India’s leading quick-commerce startups. As an aspiring Data Analyst, I transitioned raw, messy CSV data into a structured PostgreSQL database to uncover business-critical insights regarding pricing strategies, stock availability, and revenue potential.
+---
 
-🛠️ Technical Workflow
+# 🛒 Zepto Inventory & Pricing Analysis
 
-To ensure a professional and scalable analysis, I followed a structured data engineering pipeline:
+## 📌 Project Overview
 
-    Data Ingestion: Utilized PostgreSQL psql meta-commands (\copy) for high-speed client-side loading.
+This project analyzes Zepto's product catalog using PostgreSQL to evaluate inventory health, pricing strategy effectiveness, discount patterns, and revenue risks caused by stock shortages.
 
-        Challenge: Handled complex delimiters and UTF-8 encoding issues within the product name strings.
+The analysis focuses on identifying business opportunities through SQL-driven insights, including inventory optimization, stock-out risk assessment, category-level discount analysis, and ABC inventory classification.
 
-        Solution: Configured QUOTE and ESCAPE parameters to maintain data integrity for 10,000+ rows.
+Using advanced SQL concepts such as Common Table Expressions (CTEs), Window Functions, Aggregate Functions, and Ranking Functions, the project transforms raw e-commerce catalog data into actionable business intelligence.
 
-    Data Cleaning: * Normalized pricing by converting values from paise to Rupees (₹).
+---
 
-        Handled null values in the category and quantity fields.
+## 🎯 Business Problem
 
-        Deduplicated SKUs appearing across multiple sub-categories.
+E-commerce companies manage thousands of products across multiple categories. Without proper analysis, businesses face challenges such as:
 
-    Exploratory Data Analysis (EDA): Identified category distributions and out-of-stock ratios.
+* 📉 Revenue loss from stock-outs
+* 📦 Inefficient inventory allocation
+* 💰 Poor pricing and discount strategies
+* 📊 Overstocking of low-performing products
+* 🔍 Lack of visibility into high-value inventory
 
-📊 Business Insights (Key Findings)
+This project aims to address these challenges through data-driven inventory and pricing analysis.
 
-    Revenue at Risk: Found that [X]% of high-margin items in the [Category Name] category are currently out of stock, representing a potential revenue gap of ₹[Amount].
+---
 
-    Pricing Strategy: Identified that the average discount across the platform is [X]%, with the [Category Name] category offering the highest value to customers.
+## 🗂️ Dataset Information
 
-    Inventory Optimization: [X]% of products are currently "Low Stock" (Available Quantity < 10), primarily in the [Category Name] segment.
+The dataset contains over **10,000 product records** from Zepto's inventory catalog and includes:
 
-    Value-for-Money: Used price-per-gram analysis to rank the top 5 most cost-effective products for consumers.
+* Product Name
+* Category
+* MRP
+* Discounted Price
+* Discount Percentage
+* Available Quantity
+* Product Weight
+* Product Availability Status
 
-💻 SQL Skills Showcased
+Before analysis, the dataset was cleaned and standardized for accurate reporting and business decision-making.
 
-This project demonstrates my proficiency in advanced SQL techniques:
+---
 
-    Data Definition (DDL): Schema design and table constraints.
+## 🧹 Data Cleaning & Preparation
 
-    Aggregations: GROUP BY and HAVING for category-level summaries.
+The following preprocessing steps were performed:
 
-    Window Functions: Using RANK() and DENSE_RANK() to identify top-performing products within each category.
+✅ Converted pricing values from Paise to INR
 
-    CTEs (Common Table Expressions): Writing modular, readable code for complex multi-step analyses.
+✅ Removed invalid zero-priced product listings
 
-    Case Statements: Segmenting products into "Budget," "Mid-Range," and "Premium" tiers.
+✅ Standardized category information
 
-📁 Repository Structure
+✅ Handled missing values
 
-    Data/: Contains the zepto_v2.csv raw dataset (sourced from Kaggle-https://shorturl.at/mhe8A ).
+✅ Validated pricing consistency across products
 
-    Scripts/:
+---
 
-        01_setup.sql: Table creation and \copy ingestion scripts.
+## 🛠️ Tools & Technologies
 
-        02_cleaning.sql: Data transformation and normalization.
+### 🗄️ Database
 
-        03_analysis.sql: Business-driven queries and insights.
+* PostgreSQL
 
-    README.md: Project documentation and executive summary.
+### 📈 Querying & Analysis
 
-🚀 About the Author
+* SQL
+* Common Table Expressions (CTEs)
+* Window Functions
+* Aggregate Functions
+* Ranking Functions
 
-Pranay Kumar
-Data Annotation Specialist | Aspiring Data Analyst
+### 📊 Business Intelligence
 
-Transitioning from a Data Annotation Specialist background to full-time Data Analytics. I specialize in turning raw datasets into actionable business narratives.
+* Inventory Analytics
+* Pricing Analytics
+* Revenue Risk Analysis
 
-Check out my other projects:
+---
 
-    Jarvis Portfolio Project — Project Jarvis: Personal Virtual Assistant
+## 🚀 SQL Concepts Applied
 
-    Role: Lead Developer
+This project demonstrates practical use of:
 
-    Tech Stack: Python, Speech Recognition, API Integration.
+* SELECT Statements
+* WHERE Clauses
+* CASE Statements
+* Aggregate Functions
+* GROUP BY
+* HAVING
+* ORDER BY
+* Subqueries
+* Common Table Expressions (CTEs)
+* Window Functions
+* ROW_NUMBER()
+* RANK()
+* DENSE_RANK()
+* Percentile Analysis
+* Inventory Segmentation
 
-    The Goal: Designed and built an automated virtual assistant to streamline daily digital tasks and system control.
+---
 
-    Key Features:
+# 🔍 Key Business Insights
+
+## 📉 Revenue at Risk (Stock-Out Impact)
+
+Inventory analysis revealed a significant portion of products currently unavailable for purchase.
+
+* Approximately **12.14%** of products were identified as Out of Stock.
+* 🍨 Ice Cream & Desserts emerged as a major category with high potential revenue leakage.
+* ⚠️ Stock-outs in high-demand categories increase the risk of customer churn and lost sales opportunities.
+
+### 💡 Recommendation
+
+Prioritize replenishment of high-demand products and implement inventory forecasting models to reduce stock-out risk.
+
+---
+
+## 💰 Pricing & Discount Strategy
+
+Category-level pricing analysis was benchmarked against platform-wide discount trends.
+
+* Average platform discount: **7.62%**
+* 📊 Significant variation in discounts was observed across categories.
+* 📦 Bulk-packaged products provided superior value per gram compared to smaller alternatives.
+
+### 💡 Recommendation
+
+Promote value-pack products to price-sensitive customers while optimizing discount allocation across categories.
+
+---
+
+## 📦 Inventory Classification (ABC Analysis)
+
+Using the Pareto Principle (80/20 Rule), products were classified according to inventory value contribution.
+
+### 🥇 Tier A Products
+
+* Represent approximately 20% of products
+* Contribute nearly 70% of total inventory value
+
+### 🥈 Tier B Products
+
+* Moderate inventory value contribution
+* Require routine monitoring
+
+### 🥉 Tier C Products
+
+* Lower inventory value contribution
+* Support catalog breadth
+
+### 💡 Recommendation
+
+Implement stricter inventory controls and forecasting for Tier A products to maximize inventory efficiency.
+
+---
+
+## ❓ Business Questions Solved
+
+* Which product categories have the highest stock-out risk?
+* Which products provide the best value per gram?
+* What percentage of inventory is unavailable?
+* Which categories offer the largest discounts?
+* What is the estimated revenue impact of stock shortages?
+* Which products should be prioritized for replenishment?
+* How should inventory be segmented using ABC analysis?
+
+---
+
+## 📁 Repository Structure
+
+```text
+zepto-sql-inventory-analysis/
+│
+├── Dataset/
+│   ├── zepto_v1.xlsx
+│   └── zepto_v2.csv
+│
+├── SQL/
+│   └── zepto_inventory_analysis.sql
+│
+├── Report/
+│   └── Executive Summary.pdf
+│
+└── README.md
+```
+
+---
+
+## 🎯 Project Outcomes
+
+This analysis provides:
+
+✅ Inventory Optimization Recommendations
+
+✅ Revenue Leakage Detection
+
+✅ Pricing Strategy Insights
+
+✅ Discount Performance Evaluation
+
+✅ Inventory Segmentation Framework
+
+✅ Business Intelligence Reporting
+
+---
+
+## 🧠 Skills Demonstrated
+
+* SQL
+* PostgreSQL
+* Data Analysis
+* Data Cleaning
+* Window Functions
+* CTEs
+* Inventory Analytics
+* Business Intelligence
+* Data Storytelling
+* Business Recommendations
+
+---
+
+## 👨‍💻 About the Author
+
+**Pranay Kumar**
+
+Aspiring Data Analyst skilled in:
+
+* SQL
+* PostgreSQL
+* Python
+* Power BI
+* Excel
+* Data Visualization
+* Business Analytics
+
+Passionate about transforming raw data into actionable business insights and building end-to-end analytics solutions.
+
+---
+
+### ⭐ Pro Tip
+
+Add this right below your title:
+
+```markdown
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![SQL](https://img.shields.io/badge/SQL-Analytics-green)
+![Data Analysis](https://img.shields.io/badge/Data-Analysis-orange)
+![Business Intelligence](https://img.shields.io/badge/Business-Intelligence-purple)
+```
+
+Those badges make the repository look significantly more polished and professional.
+
 
         Developed custom voice-command modules for system automation and web navigation.
 
