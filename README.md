@@ -1,9 +1,3 @@
-Yes. A few well-placed emojis can make the README look more modern and visually appealing **without looking unprofessional**.
-
-For a Data Analytics portfolio project, I'd use emojis only in headings and key sections.
-
----
-
 # 🛒 Zepto Inventory & Pricing Analysis
 
 ## 📌 Project Overview
